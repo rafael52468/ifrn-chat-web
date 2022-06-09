@@ -1,7 +1,8 @@
 import React from 'react'
-export const AppInput = props => (
+import TextField from '@mui/material/TextField'
+
+export const AppInput = ({ label, type, title }) => (
   <div>
-    <label>{props.label}</label>
-    <input type={props.type} title={props.title} />
+    <TextField label={label} type={type} helperText={title} fullWidth />
   </div>
 )
