@@ -1,9 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { AppContainer } from '../src/components/AppContainerComponent'
-import { AppInput } from '../src/components/AppInputComponent'
-import { AppButton } from '../src/components/AppButtonComponent'
+import { AppButton, AppContainer, AppInput } from '../src/components'
 
 const Login = props => {
   const router = useRouter()
@@ -11,16 +9,17 @@ const Login = props => {
   return (
     <div>
       <Head>
-        <title>página de login</title>
+        <title>Infoweb chat - Login</title>
       </Head>
       <main>
-        <nav>
-          <p>Chat de Infoweb</p>
-          <button onClick={() => router.back()}>voltar</button>
-        </nav>
         <AppContainer>
           <AppInput label="Usuário" title="apelido ou email do usuário" />
           <AppInput label="Senha" type="password" />
+          <AppButton
+            onClick={event => router.back()}
+            label="voltar"
+            color="secondary"
+          />
           <AppButton
             title="Clique aqui para entrar no chat"
             label="Entrar no chat"
